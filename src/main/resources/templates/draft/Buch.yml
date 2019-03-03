@@ -1,0 +1,26 @@
+---
+"$schema": "http://json-schema.org/draft-04/schema#",
+type: object
+id: http://www.github.com/funthomas424242/schemas/Buch.yml
+
+definitions:
+  Version:
+    type: object
+    properties:
+      groupId:
+        type: string
+      artifactId:
+        type: string
+      version:
+        type: string
+
+properties:
+  Version:
+    type: object
+    "$ref": "#/definitions/Version"
+  Titel:
+    type: string
+  Autoren:
+    type: array
+    items:
+      type: string

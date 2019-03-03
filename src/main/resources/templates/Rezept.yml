@@ -1,0 +1,60 @@
+---
+"$schema": "http://json-schema.org/draft-04/schema#",
+type: object
+id: http://www.github.com/funthomas424242/schemas/Rezept.yml
+
+definitions:
+  Kochbuch:
+    type: object
+    properties:
+      Version:
+        type: object
+        "$ref": "#/definitions/Version"
+      Titel:
+        type: string
+      Autoren:
+        type: array
+        items:
+          type: string
+  Version:
+    type: object
+    properties:
+      groupId:
+        type: string
+      artifactId:
+        type: string
+      version:
+        type: string
+
+  Produktliste:
+    type: array
+    items:
+      type: object
+      "$ref": "#/definitions/Produkt"
+  Produkt:
+    type: object
+    properties:
+      ean:
+        type: string
+
+  Rezeptliste:
+    type: array
+    items:
+      type: object
+      "$ref": "#/definitions/Rezept"
+  Rezept:
+    type: object
+    properties:
+      name:
+        type: string
+
+properties:
+  Kochbuch:
+    type: object
+    "$ref": "#/definitions/Kochbuch"
+  Rezeptliste:
+    type: object
+    "$ref": "#/definitions/Rezeptliste"
+  Produktliste:
+    type: object
+    "$ref": "#/definitions/Produktliste"
