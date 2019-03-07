@@ -1,0 +1,13 @@
+---
+"$schema": "http://json-schema.org/draft-04/schema#",
+type: object
+id: http://www.github.com/funthomas424242/schemas/Produkt.yml
+
+definitions:
+
+properties:
+  Produkt:
+    type: object
+    properties:
+      ean:
+        type: string

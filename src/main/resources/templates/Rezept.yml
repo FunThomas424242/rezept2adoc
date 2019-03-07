@@ -5,16 +5,6 @@ id: http://www.github.com/funthomas424242/schemas/Rezept.yml
 
 definitions:
 
-
 properties:
-  Kochbuch:
-    type: object
-    properties:
-      Version:
-        type: string
-      Titel:
-        type: string
-      Autoren:
-        type: array
-        items:
-          type: string
+  name:
+    type: string

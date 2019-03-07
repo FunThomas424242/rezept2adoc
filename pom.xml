@@ -108,6 +108,7 @@
           <compilerArgs>
 
             <arg>-Xplugin:Manifold strings</arg>
+            <!--<compilerArg>-Xlint:all</compilerArg>-->
 
           </compilerArgs>
 

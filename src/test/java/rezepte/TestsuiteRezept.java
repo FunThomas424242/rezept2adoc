@@ -3,6 +3,7 @@ package rezepte;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import templates.Kochbuch;
+import templates.RezeptFile;
 import templates.Rezept;
 
 import java.nio.file.Paths;
@@ -15,23 +16,26 @@ public class TestsuiteRezept {
     @Test
     @DisplayName("Lade eine leere Rezept JSON Datei")
     public void ladeLeeresRezept() {
-        final Rezept rezept = Rezept.load().fromJsonFile(
+        final RezeptFile rezeptFile = RezeptFile.load().fromJsonFile(
                 Paths.get("src/test/resources/", "kochbuch1/LeereDatei.rezept")
                         .toFile()
         );
-        assertNull(rezept.get("Kochbuch"));
+        assertNull(rezeptFile.get("Kochbuch"));
     }
 
     @Test
     @DisplayName("Lade eine Kochbuch JSON Datei")
     public void ladeKochbuch() {
-        final Rezept rezept = Rezept.load().fromJsonFile(
+        final RezeptFile rezeptFile = RezeptFile.load().fromJsonFile(
                 Paths.get("src/test/resources/", "/kochbuch1/Kochbuch.rezept")
                         .toFile()
         );
-        final Kochbuch buch = (Kochbuch) rezept.get("Kochbuch");
-        assertNotNull(buch);
-        assertEquals("Backen & Banken", buch.get("Titel"));
+        final Kochbuch kochbuch = (Kochbuch) rezeptFile.get("Kochbuch");
+        assertNotNull(kochbuch);
+        assertEquals("Backen & Banken", kochbuch.get("Titel"));
+        // rquired wirkt sich nur auf den Builder aus!!!
+        // beim Laden kann der Wert optional sein
+        assertNull(kochbuch.get("Version"));
     }
 
 

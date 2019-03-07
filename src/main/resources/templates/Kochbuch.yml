@@ -4,16 +4,28 @@ type: object
 id: http://www.github.com/funthomas424242/schemas/Kochbuch.yml
 
 definitions:
-
-properties:
-  Kochbuch:
+  Version:
     type: object
     properties:
-      Version:
+      groupId:
         type: string
-      Titel:
+      artifactId:
         type: string
-      Autoren:
-        type: array
-        items:
-          type: string
+      version:
+        type: string
+
+
+properties:
+  Version:
+    type: object
+    "$ref": "#/definitions/Version"
+  Titel:
+    type: string
+  Autoren:
+    type: array
+    items:
+      type: string
+required:
+  - Version
+
+
