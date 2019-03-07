@@ -1,10 +1,9 @@
 ---
 "$schema": "http://json-schema.org/draft-04/schema#",
 type: object
-id: http://www.github.com/funthomas424242/schemas/Rezept.yml
+id: http://www.github.com/funthomas424242/schemas/Kochbuch.yml
 
 definitions:
-
 
 properties:
   Kochbuch:

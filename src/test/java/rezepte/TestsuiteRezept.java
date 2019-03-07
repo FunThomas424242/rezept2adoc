@@ -2,13 +2,14 @@ package rezepte;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import templates.Kochbuch;
 import templates.Rezept;
 
 import java.nio.file.Paths;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class RezeptTestsuite {
+public class TestsuiteRezept {
 
 
     @Test
@@ -25,12 +26,12 @@ public class RezeptTestsuite {
     @DisplayName("Lade eine Kochbuch JSON Datei")
     public void ladeKochbuch() {
         final Rezept rezept = Rezept.load().fromJsonFile(
-                Paths.get("src/test/resources/", "kochbuch1/Kochbuch.rezept")
+                Paths.get("src/test/resources/", "/kochbuch1/Kochbuch.rezept")
                         .toFile()
         );
-//        final Buch buch = (Buch) rezept.get("Kochbuch");
-//        assertNotNull(buch);
-//        assertEquals("",buch.get("Titel"));
+        final Kochbuch buch = (Kochbuch) rezept.get("Kochbuch");
+        assertNotNull(buch);
+        assertEquals("Backen & Banken", buch.get("Titel"));
     }
 
 
